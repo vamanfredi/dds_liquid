@@ -1,4 +1,5 @@
 import { DataSource } from 'typeorm'
+import { Incidente } from './entities/Incidente'
 
 export const AppDataSource = new DataSource({
   type: 'mysql',
@@ -7,6 +8,6 @@ export const AppDataSource = new DataSource({
   password: '123456',
   port: 3306,
   database: 'dds',
-  entities: [],
+  entities: [Incidente],
   logging: true
 })

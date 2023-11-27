@@ -24,6 +24,7 @@ const getIncidentes= async () => {
       entidad: incidente.prestacion.establecimiento.entidad.nombre,
       establecimiento: incidente.prestacion.establecimiento.nombre,
       servicio: incidente.prestacion.servicio.nombre,
+      estado: incidente.estado,
     }
   })
 }

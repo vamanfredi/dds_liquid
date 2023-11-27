@@ -2,11 +2,11 @@
   "name": "dds_ts",
   "version": "1.0.0",
   "description": "",
-  "main": "app.ts",
+  "main": "index.ts",
   "scripts": {
     "start": "node build/app.js",
     "tsc": "tsc",
-    "dev": "ts-node-dev --respawn src/app.ts",
+    "dev": "ts-node-dev --respawn src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,7 +14,7 @@
   "dependencies": {
     "express": "4.18.2",
     "liquidjs": "10.9.4",
-    "mysql": "^2.18.1",
+    "mysql2": "^3.6.5",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.17"
   },

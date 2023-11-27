@@ -1,11 +1,13 @@
 import express from 'express'
 import {Liquid} from "liquidjs"
+import { Incidente } from './entities/Incidente'
+
 const app = express()
 
 let engine = new Liquid()
 
 app.engine('liquid', engine.express())
-app.set('views', './templates')
+app.set('views', './src/templates')
 app.set('view engine', 'liquid')
 
 
@@ -15,7 +17,22 @@ app.get('/', (_req, res) => {
   res.send('Hello World')
 })
 
-app.get('/listadoIncidentes', (_req, res) => {
-  res.render('listadoIncidentes')
+const getIncidentes= async () => {
+  const incidentes =await Incidente.find()
+  return incidentes.map((incidente) => {
+    return {
+      entidad: incidente.prestacion.establecimiento.entidad.nombre,
+      establecimiento: incidente.prestacion.establecimiento.nombre,
+      servicio: incidente.prestacion.servicio.nombre,
+    }
+  })
+}
+
+app.get('/incidentes', (_req, res) => {
+  const incidentes =getIncidentes()
+  console.log("ACAAAAAA")
+  console.log(incidentes)
+  res.render('listadoIncidentes', {incidentes})
+
 })
 export default app

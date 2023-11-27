@@ -1,4 +1,4 @@
-import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedColumn, BaseEntity } from "typeorm"
+import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedColumn, BaseEntity, ManyToOne ,JoinColumn } from "typeorm"
 import { Prestacion } from "./Prestacion"
 
 @Entity()
@@ -8,17 +8,17 @@ export class Incidente extends BaseEntity{
 
     @Column()
     estado:boolean
-    
-    @Column()
+    @JoinColumn({ name: "prestacion_id" })
+    @ManyToOne(()=>Prestacion,{eager:true})
     prestacion:Prestacion
     
     @Column()
     observaciones:string
     
     @CreateDateColumn()
-    fechaYHoraDeApertura:Date
+    fechaYHoraApertura:Date
     
     @UpdateDateColumn()
-    fechaYHoraDeCierre:Date
+    fechaYHoraCierre:Date
     
 }

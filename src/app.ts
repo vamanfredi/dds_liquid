@@ -17,6 +17,12 @@ app.get('/', (_req, res) => {
   res.send('Hello World')
 })
 
+app.get('/incidentes', (_req, res) => {
+  const incidentes =getIncidentes()
+  res.render('listadoIncidentes', {incidentes})
+
+})
+
 const getIncidentes= async () => {
   const incidentes =await Incidente.find()
   return incidentes.map((incidente) => {
@@ -29,11 +35,4 @@ const getIncidentes= async () => {
   })
 }
 
-app.get('/incidentes', (_req, res) => {
-  const incidentes =getIncidentes()
-  console.log("ACAAAAAA")
-  console.log(incidentes)
-  res.render('listadoIncidentes', {incidentes})
-
-})
 export default app

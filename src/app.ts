@@ -1,6 +1,6 @@
 import express from 'express'
 import {Liquid} from "liquidjs"
-import { Incidente } from './entities/Incidente'
+//import { Incidente } from './entities/Incidente'
 
 const app = express()
 

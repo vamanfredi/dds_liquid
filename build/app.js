@@ -24,6 +24,10 @@ app.use(express_1.default.json());
 app.get('/', (_req, res) => {
     res.send('Hello World');
 });
+app.get('/incidentes', (_req, res) => {
+    const incidentes = getIncidentes();
+    res.render('listadoIncidentes', { incidentes });
+});
 const getIncidentes = () => __awaiter(void 0, void 0, void 0, function* () {
     const incidentes = yield Incidente_1.Incidente.find();
     return incidentes.map((incidente) => {
@@ -34,11 +38,5 @@ const getIncidentes = () => __awaiter(void 0, void 0, void 0, function* () {
             estado: incidente.estado,
         };
     });
-});
-app.get('/incidentes', (_req, res) => {
-    const incidentes = getIncidentes();
-    console.log("ACAAAAAA");
-    console.log(incidentes);
-    res.render('listadoIncidentes', { incidentes });
 });
 exports.default = app;

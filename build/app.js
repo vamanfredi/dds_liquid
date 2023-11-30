@@ -31,11 +31,12 @@ app.get('/incidentes', (_req, res) => {
 const getIncidentes = () => __awaiter(void 0, void 0, void 0, function* () {
     const incidentes = yield Incidente_1.Incidente.find();
     return incidentes.map((incidente) => {
+        var _a, _b, _c, _d, _e, _f, _g;
         return {
-            entidad: incidente.prestacion.establecimiento.entidad.nombre,
-            establecimiento: incidente.prestacion.establecimiento.nombre,
-            servicio: incidente.prestacion.servicio.nombre,
-            estado: incidente.estado,
+            entidad: (_c = (_b = (_a = incidente.prestacion) === null || _a === void 0 ? void 0 : _a.establecimiento) === null || _b === void 0 ? void 0 : _b.entidad) === null || _c === void 0 ? void 0 : _c.nombre,
+            establecimiento: (_e = (_d = incidente === null || incidente === void 0 ? void 0 : incidente.prestacion) === null || _d === void 0 ? void 0 : _d.establecimiento) === null || _e === void 0 ? void 0 : _e.nombre,
+            servicio: (_g = (_f = incidente === null || incidente === void 0 ? void 0 : incidente.prestacion) === null || _f === void 0 ? void 0 : _f.servicio) === null || _g === void 0 ? void 0 : _g.nombre,
+            estado: incidente === null || incidente === void 0 ? void 0 : incidente.estado,
         };
     });
 });

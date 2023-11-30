@@ -15,10 +15,10 @@ export class Incidente extends BaseEntity{
     @Column()
     observaciones:string
     
-    @CreateDateColumn()
+    @CreateDateColumn({name:"fechayhoraapertura"})
     fechaYHoraApertura:Date
     
-    @UpdateDateColumn()
+    @UpdateDateColumn({name:"fechayhoracierre"})
     fechaYHoraCierre:Date
     
 }

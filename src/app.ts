@@ -1,6 +1,6 @@
 import express from 'express'
 import {Liquid} from "liquidjs"
-//import { Incidente } from './entities/Incidente'
+import { Incidente } from './entities/Incidente'
 
 const app = express()
 
@@ -18,11 +18,10 @@ app.get('/', (_req, res) => {
 })
 
 app.get('/incidentes', (_req, res) => {
-  //const incidentes =getIncidentes()
-  res.render('listadoIncidentes' )
-
+  const incidentes =getIncidentes()
+  res.render('listadoIncidentes', { incidentes } )
 })
-/*
+
 const getIncidentes= async () => {
   const incidentes =await Incidente.find()
   return incidentes.map((incidente) => {
@@ -34,5 +33,5 @@ const getIncidentes= async () => {
     }
   })
 }
-*/
+
 export default app

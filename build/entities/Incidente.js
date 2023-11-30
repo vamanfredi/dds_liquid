@@ -33,11 +33,11 @@ __decorate([
     __metadata("design:type", String)
 ], Incidente.prototype, "observaciones", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)(),
+    (0, typeorm_1.CreateDateColumn)({ name: "fechayhoraapertura" }),
     __metadata("design:type", Date)
 ], Incidente.prototype, "fechaYHoraApertura", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)(),
+    (0, typeorm_1.UpdateDateColumn)({ name: "fechayhoracierre" }),
     __metadata("design:type", Date)
 ], Incidente.prototype, "fechaYHoraCierre", void 0);
 exports.Incidente = Incidente = __decorate([

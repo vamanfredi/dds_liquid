@@ -22,7 +22,7 @@ app.get('/incidentes', (_req, res) => {
   res.render('listadoIncidentes' )
 
 })
-
+/*
 const getIncidentes= async () => {
   const incidentes =await Incidente.find()
   return incidentes.map((incidente) => {
@@ -34,5 +34,5 @@ const getIncidentes= async () => {
     }
   })
 }
-
+*/
 export default app

@@ -13,11 +13,8 @@ app.set('view engine', 'liquid')
 
 app.use(express.json())
 
-app.get('/', (_req, res) => {
-  res.send('Hello World')
-})
 
-app.get('/incidentes', (_req, res) => {
+app.get('/', (_req, res) => {
   const incidentes =getIncidentes()
   res.render('listadoIncidentes', { incidentes } )
 })

@@ -27,10 +27,10 @@ const getIncidentes= async () => {
   const incidentes =await Incidente.find()
   return incidentes.map((incidente) => {
     return {
-      entidad: incidente.prestacion.establecimiento.entidad.nombre,
-      establecimiento: incidente.prestacion.establecimiento.nombre,
-      servicio: incidente.prestacion.servicio.nombre,
-      estado: incidente.estado,
+      entidad: incidente.prestacion?.establecimiento?.entidad?.nombre,
+      establecimiento: incidente?.prestacion?.establecimiento?.nombre,
+      servicio: incidente?.prestacion?.servicio?.nombre,
+      estado: incidente?.estado,
     }
   })
 }

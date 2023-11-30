@@ -18,8 +18,8 @@ app.get('/', (_req, res) => {
 })
 
 app.get('/incidentes', (_req, res) => {
-  const incidentes =getIncidentes()
-  res.render('listadoIncidentes', {incidentes})
+  //const incidentes =getIncidentes()
+  res.render('listadoIncidentes' )
 
 })
 

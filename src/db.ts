@@ -4,6 +4,8 @@ import { Prestacion } from './entities/Prestacion'
 import { Entidad } from './entities/Entidad'
 import { Establecimiento } from './entities/Establecimiento'
 import { Servicio } from './entities/Servicio'
+import dotenv  from 'dotenv'
+dotenv.config()
 
 export const AppDataSource = new DataSource({
   type: 'postgres',

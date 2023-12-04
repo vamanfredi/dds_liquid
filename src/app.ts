@@ -17,7 +17,7 @@ app.use(express.json())
 app.post('/', (req, res) => {
   const incidentes =getIncidentes()
   
-  res.render('listadoIncidentes', { incidentes, admin:req.body.admin, user: req.body.usuario } )
+  res.render('listadoIncidentes', { incidentes, admin:req.body.admin, user: req.body.user } )
 })
 
 const getIncidentes= async () => {

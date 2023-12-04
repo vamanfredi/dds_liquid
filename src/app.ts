@@ -14,9 +14,10 @@ app.set('view engine', 'liquid')
 app.use(express.json())
 
 
-app.get('/', (_req, res) => {
+app.post('/', (req, res) => {
   const incidentes =getIncidentes()
-  res.render('listadoIncidentes', { incidentes } )
+  
+  res.render('listadoIncidentes', { incidentes, admin:req.body.admin, user: req.body.usuario } )
 })
 
 const getIncidentes= async () => {

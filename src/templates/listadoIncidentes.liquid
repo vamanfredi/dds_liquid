@@ -75,9 +75,11 @@
                 <li><a class="dropdown-item" href="/rankingImpactoIncidentes">Ranking de impacto de incidentes</a></li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="/cargarDatos">Carga de datos</a>
-            </li>
+            {% if admin %}
+              <li class="nav-item">
+                <a class="nav-link text-light" href="/cargarDatos">Carga de datos</a>
+              </li>
+            {% endif %}
           </ul>
           <ul class="navbar-nav position-absolute end-0">
             <li class="nav-item dropdown me-2">
@@ -90,7 +92,7 @@
               >
                 <i class="bi bi-person"></i>
                 <!-- Icono de usuario (debes incluir Bootstrap Icons) -->
-                Usuario
+                {{ user }}
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>

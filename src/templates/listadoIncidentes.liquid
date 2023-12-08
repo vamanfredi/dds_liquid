@@ -117,6 +117,7 @@
                 <th>Establecimiento</th>
                 <th>Servicio</th>
                 <th>Estado</th>
+                <th>Fecha Apertura</th>
               </tr>
             </thead>
             <tbody>
@@ -128,6 +129,7 @@
                   <td>
                     {% if incidente.estado %}Abierto{% else %} Cerrado{% endif %}
                   </td>
+                  <td>{{ incidente.fecha_apertura }}</td>
                 </tr>
               {% endfor %}
             </tbody>

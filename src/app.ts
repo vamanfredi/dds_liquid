@@ -13,6 +13,11 @@ app.set('view engine', 'liquid')
 
 app.use(express.json())
 
+app.get('/', (_req, res) => {
+  const incidentes =getIncidentes()
+  
+  res.render('listadoIncidentes',{incidentes})
+})
 
 app.post('/', (req, res) => {
   const incidentes =getIncidentes()
@@ -28,6 +33,7 @@ const getIncidentes= async () => {
       establecimiento: incidente?.prestacion?.establecimiento?.nombre,
       servicio: incidente?.prestacion?.servicio?.nombre,
       estado: incidente?.estado,
+      fecha_apertura: incidente?.fechaYHoraApertura.toLocaleDateString(),
     }
   })
 }
